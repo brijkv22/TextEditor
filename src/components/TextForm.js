@@ -53,21 +53,21 @@ export default function TextForm(props) {
                     </div>
                 </div>
                 <div className="mb-3">
-                    <textarea className="form-control" value={text} id="myBox" onChange={handleOnChange} style={{backgroundColor:props.mode === 'dark'?'grey':'white', color:props.mode === 'dark'?'white':'black'}} rows="8"></textarea>
+                    <textarea className="form-control" value={text} id="myBox" onChange={handleOnChange} style={{backgroundColor:props.mode === 'dark'?'#dda8a8':'white', color:props.mode === 'dark'?'#251e89':'black'}} rows="8"></textarea>
                 </div>
-                
+            
                 <div className="d-grid gap-2 d-md-block">
-                    <button className="btn btn-primary mx-2" type='button' onClick={handleUpClick} >Convert to Uppercase</button>
-                    <button className="btn btn-primary mx-2" type='button' onClick={handleLoClick} >Convert to Lowercase</button>
-                    <button className="btn btn-primary mx-2" type='button' onClick={handleClearClick} >Clear Text</button>
-                    <button className="btn btn-primary mx-2" type='button' onClick={handleCopy} >Copy Text</button>
-                    <button className="btn btn-primary mx-2 TextForm8" type='button' onClick={handleExtraSpaces} >Remove Extra Spaces</button>
+                    <button disabled={text.length ===0} className="btn btn-primary mx-2" type='button' onClick={handleUpClick} >Convert to Uppercase</button>
+                    <button disabled={text.length ===0} className="btn btn-primary mx-2" type='button' onClick={handleLoClick} >Convert to Lowercase</button>
+                    <button disabled={text.length ===0} className="btn btn-primary mx-2" type='button' onClick={handleClearClick} >Clear Text</button>
+                    <button disabled={text.length ===0} className="btn btn-primary mx-2" type='button' onClick={handleCopy} >Copy Text</button>
+                    <button disabled={text.length ===0} className="btn btn-primary mx-2 TextForm8" type='button' onClick={handleExtraSpaces} >Remove Extra Spaces</button>
                 </div>
             </div>
             <div className="container">
                 <div className='TextForm2'>See your text summary</div>
-                <p className='TextForm3'>{text.split(" ").length} words and {text.length} character</p>
-                <p className='TextForm3'> {0.008 * text.split(" ").length} Minute character read </p>
+                <p className='TextForm3'>{text.split(/\s+/).filter((element) => {return element.length!==0}).length} words and {text.length} character</p>
+                <p className='TextForm3'> {0.008 * text.split(" ").filter((element) => {return element.length!==0}).length} Minute character read </p>
                 <p className='TextForm5'>{text.length>0?text:"Enter your text in box to preview here!"}</p>
             </div>
         </>
