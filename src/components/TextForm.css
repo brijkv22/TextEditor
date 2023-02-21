@@ -144,6 +144,12 @@
             width: 912px;
         }
     }
+    
+}
+@media screen and (min-width: 800px) and (max-width:1200px) {
+    .TextForm9{
+        margin-top: 10px;
+    }
 }
 @media screen and (min-width:770px) and (max-width:991px) {
     .TextForm8{
@@ -174,7 +180,7 @@
         }
     }
 }
-@media screen and (max-width:778px) {
+@media screen and (min-width:766px) and (max-width:778px) {
     @keyframes reveal {
         0% {
             opacity: 0;
@@ -196,11 +202,14 @@
     
         100% {
             opacity: 1;
-            width: 492px;
+            width: 668px;
         }
     }
+    .TextForm8{
+        margin-top: 10px;
+    }
 }
-@media screen and (max-width:530px) {
+@media screen and (max-width:540px) {
     @keyframes reveal {
         0% {
             opacity: 0;
@@ -222,7 +231,7 @@
     
         100% {
             opacity: 1;
-            width: 445px;
+            width: 488px;
         }
     }
 }
@@ -303,7 +312,7 @@
     
         100% {
             opacity: 1;
-            width: 380px;
+            width: 366px;
         }
     }
 }
@@ -330,7 +339,7 @@
     
         100% {
             opacity: 1;
-            width: 327px;
+            width: 337px;
         }
     }
 }
@@ -359,5 +368,37 @@
             opacity: 1;
             width: 312px;
         }
+    }
+}
+@media screen and (max-width:280px) {
+    @keyframes reveal {
+        0% {
+            opacity: 0;
+            width: 0px;
+        }
+    
+        20% {
+            opacity: 1;
+            width: 0px;
+        }
+    
+        30% {
+            width: 212px;
+        }
+    
+        80% {
+            opacity: 1;
+        }
+    
+        100% {
+            opacity: 1;
+            width: 230px;
+        }
+    }
+    .TextForm1{
+        font-size: 27px;
+    }
+    .TextForm7{
+        font-size: 27px;
     }
 }

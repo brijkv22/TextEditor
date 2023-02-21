@@ -4,6 +4,8 @@ import './TextForm.css';
 
 // console.log(useState('Enter text here'))
 export default function TextForm(props) {
+    const [digit1,setDigit1] = useState("");
+    const [letters1,setLetters1] = useState("");
     const handleUpClick = () => {
         //  console.log("Uppercase was clicked" + text);
         let newText = text.toUpperCase();
@@ -40,12 +42,23 @@ export default function TextForm(props) {
         setText(newText.join(" "));
         props.showAlert("Extra spaces removed", "success");
     }
+    const handleCharNum = () => {
+        let pattern1 = /[0-9]/g;
+        let pattern2 = /[a-zA-Z]/g;
+        let digit = text.match(pattern1);
+        let letters = text.match(pattern2);
+        setDigit1(digit);
+        setLetters1(letters);
+       // document.getElementById('digits').innerText = digit + " " + letters;
+        // console.log(digit + " " + letters);
+        props.showAlert("Number and Character seperated", "success");
+    }
     const [text, setText] = useState('')
     //text = "new text"; // Wrong way to change the state
     // setText ("new text"); // Correct way to change the state 
     return (
         <>
-            <div className='container' style={{color:props.mode === 'dark'?'white':'black'}}>
+            <div className='container' style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
                 <div className='TextForm1'>
                     <div className='TextForm6'>Type</div>
                     <div className='TextForm7'>
@@ -53,22 +66,24 @@ export default function TextForm(props) {
                     </div>
                 </div>
                 <div className="mb-3">
-                    <textarea className="form-control" value={text} id="myBox" onChange={handleOnChange} style={{backgroundColor:props.mode === 'dark'?'#dda8a8':'white', color:props.mode === 'dark'?'#251e89':'black'}} rows="8"></textarea>
+                    <textarea className="form-control" value={text} id="myBox" onChange={handleOnChange} style={{ backgroundColor: props.mode === 'dark' ? '#dda8a8' : 'white', color: props.mode === 'dark' ? '#251e89' : 'black' }} rows="8"></textarea>
                 </div>
-            
+
                 <div className="d-grid gap-2 d-md-block">
-                    <button disabled={text.length ===0} className="btn btn-primary mx-2" type='button' onClick={handleUpClick} >Convert to Uppercase</button>
-                    <button disabled={text.length ===0} className="btn btn-primary mx-2" type='button' onClick={handleLoClick} >Convert to Lowercase</button>
-                    <button disabled={text.length ===0} className="btn btn-primary mx-2" type='button' onClick={handleClearClick} >Clear Text</button>
-                    <button disabled={text.length ===0} className="btn btn-primary mx-2" type='button' onClick={handleCopy} >Copy Text</button>
-                    <button disabled={text.length ===0} className="btn btn-primary mx-2 TextForm8" type='button' onClick={handleExtraSpaces} >Remove Extra Spaces</button>
+                    <button disabled={text.length === 0} className="btn btn-primary mx-2" type='button' onClick={handleUpClick} >Convert to Uppercase</button>
+                    <button disabled={text.length === 0} className="btn btn-primary mx-2" type='button' onClick={handleLoClick} >Convert to Lowercase</button>
+                    <button disabled={text.length === 0} className="btn btn-primary mx-2" type='button' onClick={handleClearClick} >Clear Text</button>
+                    <button disabled={text.length === 0} className="btn btn-primary mx-2" type='button' onClick={handleCopy} >Copy Text</button>
+                    <button disabled={text.length === 0} className="btn btn-primary mx-2 TextForm8" type='button' onClick={handleExtraSpaces} >Remove Extra Spaces</button>
+                    <button disabled={text.length === 0} className="btn btn-primary mx-2 TextForm8 TextForm9" type='button' onClick={handleCharNum} >Seperate Numbers & Characters</button>
                 </div>
             </div>
             <div className="container">
                 <div className='TextForm2'>See your text summary</div>
-                <p className='TextForm3'>{text.split(/\s+/).filter((element) => {return element.length!==0}).length} words and {text.length} character</p>
-                <p className='TextForm3'> {0.008 * text.split(" ").filter((element) => {return element.length!==0}).length} Minute character read </p>
-                <p className='TextForm5'>{text.length>0?text:"Enter your text in box to preview here!"}</p>
+                <p className='TextForm3'>{text.split(/\s+/).filter((element) => { return element.length !== 0 }).length} words and {text.length} character</p>
+                <p className='TextForm3'> {0.008 * text.split(" ").filter((element) => { return element.length !== 0 }).length} Minute character read </p>
+                <p className='TextForm5'>{text.length > 0 ? text : "Enter your text in box to preview here!"}</p>
+                <p className='TextForm5'>{text.length>0?digit1 + " " + letters1:"Type above  to seperate the numbers and letters"}</p>
             </div>
         </>
     )
