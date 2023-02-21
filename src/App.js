@@ -4,6 +4,7 @@ import Alert from './components/Alert';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import About from './components/About';
+import Home from './components/Home';
 
 import {
   BrowserRouter, 
@@ -40,6 +41,7 @@ function App() {
   return (
     <>
       <Navbar title="Free Text Editor" About="About" mode={mode} toggleMode={toggleMode} />
+      {/* <Home /> */}
       <Alert alert={alert} />
       <BrowserRouter>
         <div className="container">
@@ -50,6 +52,7 @@ function App() {
             /users/component -> coponent 2 */}
             <Route exact path="/about" element={<About mode={mode} />} /> 
             <Route exact path="/textForm" element={<TextForm showAlert={showAlert} mode={mode} />} />
+            <Route exact path='/home' element={<Home mode={mode} />} />
           </Routes>
           {/* <TextForm showAlert={showAlert} mode={mode} /> */}
           {/* <About/> */}
