@@ -13,10 +13,10 @@ export default function Navbar(props) {
                             <a href="/TextEditor" className="nav-link active" aria-current="page" ><b>Home</b></a>
                         </li>
                         <li className="nav-item">
-                            <a href="/TextEditor/textForm" className="nav-link active" aria-current="page" ><b>Text Editor</b></a>
+                            <a href="/TextEditor/textForm/" className="nav-link active" aria-current="page" ><b>Text Editor</b></a>
                         </li>
                         <li className="nav-item">
-                            <a href="/TextEditor/about" className="nav-link active" aria-current="page" ><b>{props.About}</b></a>
+                            <a href="/TextEditor/about/" className="nav-link active" aria-current="page" ><b>{props.About}</b></a>
                         </li>
                     </ul>
 

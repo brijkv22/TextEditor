@@ -50,8 +50,8 @@ function App() {
             {/* exact is used why -- for exact matching --> 
             /users -> coponent 1
             /users/component -> coponent 2 */}
-            <Route exact path="/TextEditor/about" element={<About mode={mode} />} /> 
-            <Route exact path="/TextEditor/textForm" element={<TextForm showAlert={showAlert} mode={mode} />} />
+            <Route exact path="/TextEditor/about/" element={<About mode={mode} />} /> 
+            <Route exact path="/TextEditor/textForm/" element={<TextForm showAlert={showAlert} mode={mode} />} />
             <Route exact path='/TextEditor' element={<Home mode={mode} />} />
             <Route exact path='/' element={<Home mode={mode} />} />
           </Routes>
