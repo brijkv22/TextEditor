@@ -9,14 +9,14 @@ export default function Navbar(props) {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li className="nav-item">
+                        <li className="nav-item">
                             <a href="/TextEditor" className="nav-link active" aria-current="page" ><b>Home</b></a>
                         </li>
                         <li className="nav-item">
-                            <a href="/textForm" className="nav-link active" aria-current="page" ><b>Text Editor</b></a>
+                            <a href="/TextEditor/textForm" className="nav-link active" aria-current="page" ><b>Text Editor</b></a>
                         </li>
                         <li className="nav-item">
-                            <a href="/about" className="nav-link active" aria-current="page" ><b>{props.About}</b></a>
+                            <a href="/TextEditor/about" className="nav-link active" aria-current="page" ><b>{props.About}</b></a>
                         </li>
                     </ul>
 

@@ -43,16 +43,17 @@ function App() {
       <Navbar title="Free Text Editor" About="About" mode={mode} toggleMode={toggleMode} />
       {/* <Home /> */}
       <Alert alert={alert} />
-      <BrowserRouter basename="/TextEditor">
+      <BrowserRouter>
         <div className="container">
 
           <Routes>
             {/* exact is used why -- for exact matching --> 
             /users -> coponent 1
             /users/component -> coponent 2 */}
-            <Route exact path="/about" element={<About mode={mode} />} /> 
-            <Route exact path="/textForm" element={<TextForm showAlert={showAlert} mode={mode} />} />
+            <Route exact path="/TextEditor/about" element={<About mode={mode} />} /> 
+            <Route exact path="/TextEditor/textForm" element={<TextForm showAlert={showAlert} mode={mode} />} />
             <Route exact path='/TextEditor' element={<Home mode={mode} />} />
+            <Route exact path='/' element={<Home mode={mode} />} />
           </Routes>
           {/* <TextForm showAlert={showAlert} mode={mode} /> */}
           {/* <About/> */}
